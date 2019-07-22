@@ -8,9 +8,6 @@ public class Character implements Serializable{
     private int inte;
     private int wis;
     private int cha;
-    private int[] attri = {str, con, dex, inte, wis, cha};
-    private int[] attrimod = {0, 1, 2, 3, 4, 5};
-    private int[] save = {0, 1, 2, 3, 4, 5};
 
     //Member definer as a list
     public void Character_Stats (int str, int con, int dex, int inte, int wis, int cha){
@@ -60,7 +57,10 @@ public class Character implements Serializable{
     public int getInte(){
         return this.inte;
     }
-    public void savingthrows() {
+    public void sheet_calculations() {
+        int[] attri = {str, con, dex, inte, wis, cha};
+        int[] attrimod = {0, 1, 2, 3, 4, 5};
+        int[] save = {0, 1, 2, 3, 4, 5};
         int attrilength = attri.length;
         int modlength = attrimod.length;
         String[] savetype = {"Physical", "Physical", "Evasion", "Evasion", "Mental", "Mental"};

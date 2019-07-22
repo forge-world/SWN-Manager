@@ -23,6 +23,8 @@ public class Game {
 
         Save_Load.save(A, "C:\\Users\\jmessina\\Desktop\\A.json");
         Save_Load.save(B, "C:\\Users\\jmessina\\Desktop\\B.json");
+        Save_Load.save(C, "C:\\Users\\jmessina\\Desktop\\C.json");
+        Save_Load.load("C:\\Users\\jmessina\\Desktop\\C.json");
         Save_Load.load("C:\\Users\\jmessina\\Desktop\\B.json");
         Save_Load.load("C:\\Users\\jmessina\\Desktop\\A.json");
     }

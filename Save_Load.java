@@ -5,13 +5,6 @@ import java.io.FileReader;
 
 public class Save_Load {
     public static void save(Character A, String path) {
-        //Write the class to a string for Json
-
-
-        //Locate the class in question
-
-
-        //Write the string to a file
         try {
             FileWriter writer = new FileWriter(path);
             Gson serializer = new Gson();
