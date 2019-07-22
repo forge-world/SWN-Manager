@@ -12,40 +12,55 @@ public class Character implements Serializable{
     private int[] attrimod = {0, 1, 2, 3, 4, 5};
     private int[] save = {0, 1, 2, 3, 4, 5};
 
-    public Character (int str, int con, int dex, int inte, int wis, int cha){
-        this.str = str;
-        this.con = con;
-        this.dex = dex;
-        this.inte = inte;
-        this.wis = wis;
-        this.cha = cha;
+    //Member definer as a list
+    public void Character_Stats (int str, int con, int dex, int inte, int wis, int cha){
+        this.setStr(str);
+        this.setCon(con);
+        this.setDex(dex);
+        this.setInte(inte);
+        this.setWis(wis);
+        this.setCha(cha);
     }
 
     //Getters and setters
-    public void setStr(int str){
-        this.str = str;
+    public void setStr(int str_value){
+        str = str_value;
     }
-    void setCon(int con_value){
+    public void setCon(int con_value){
         this.con = con_value;
     }
-    void setDex(int dex_value){
+    public void setDex(int dex_value){
         this.dex = dex_value;
     }
-    void setWis(int wis_value){
+    public void setWis(int wis_value) {
         this.wis = wis_value;
+
     }
-    void setCha(int cha_value){
+    public void setCha(int cha_value){
         this.cha = cha_value;
     }
-    void setInte(int inte_value){
+    public void setInte(int inte_value){
         this.inte = inte_value;
     }
-    int getStr(){
-        return attri[0];
+    public int getStr(){
+        return str;
     }
-
-
-    public Character() {
+    public int getCon(){
+        return this.con;
+    }
+    public int getDex(){
+        return this.dex;
+    }
+    public int getCha(){
+        return this.cha;
+    }
+    public int getWis(){
+        return this.wis;
+    }
+    public int getInte(){
+        return this.inte;
+    }
+    public void savingthrows() {
         int attrilength = attri.length;
         int modlength = attrimod.length;
         String[] savetype = {"Physical", "Physical", "Evasion", "Evasion", "Mental", "Mental"};
@@ -80,8 +95,5 @@ public class Character implements Serializable{
             } else save[x] = 15 - attrimod[x];
             //System.out.println(savetype[x] + " save    " + save[x]);}
         }
-    }
-    public void print(){
-        System.out.print(str + dex);
     }
 }
