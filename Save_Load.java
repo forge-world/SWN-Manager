@@ -6,14 +6,18 @@ import java.io.FileReader;
 public class Save_Load {
     public static void save(Character A, String path) {
         //Write the class to a string for Json
-        System.out.println(A);
-        Gson serializer = new Gson();
+
 
         //Locate the class in question
-        System.out.println(serializer);
+
+
         //Write the string to a file
         try {
+            FileWriter writer = new FileWriter(path);
+            Gson serializer = new Gson();
             serializer.toJson(A, new FileWriter(path));
+            writer.flush();
+            writer.close();
         }catch (IOException e){
             System.out.println("Sonofa Beach");
         }
