@@ -1,13 +1,49 @@
-public class Character {
-    private int str = 4;
-    private int con = 11;
-    private int dex = 18;
-    private int inte = 3;
-    private int wis = 13;
-    private int cha = 14;
+import java.io.Serializable;
+
+public class Character implements Serializable{
+    //Members
+    private int str;
+    private int con;
+    private int dex;
+    private int inte;
+    private int wis;
+    private int cha;
     private int[] attri = {str, con, dex, inte, wis, cha};
     private int[] attrimod = {0, 1, 2, 3, 4, 5};
     private int[] save = {0, 1, 2, 3, 4, 5};
+
+    public Character (int str, int con, int dex, int inte, int wis, int cha){
+        this.str = str;
+        this.con = con;
+        this.dex = dex;
+        this.inte = inte;
+        this.wis = wis;
+        this.cha = cha;
+    }
+
+    //Getters and setters
+    public void setStr(int str){
+        this.str = str;
+    }
+    void setCon(int con_value){
+        this.con = con_value;
+    }
+    void setDex(int dex_value){
+        this.dex = dex_value;
+    }
+    void setWis(int wis_value){
+        this.wis = wis_value;
+    }
+    void setCha(int cha_value){
+        this.cha = cha_value;
+    }
+    void setInte(int inte_value){
+        this.inte = inte_value;
+    }
+    int getStr(){
+        return attri[0];
+    }
+
 
     public Character() {
         int attrilength = attri.length;
@@ -45,8 +81,7 @@ public class Character {
             //System.out.println(savetype[x] + " save    " + save[x]);}
         }
     }
-    public String toString(){
-        System.out.println(attri[2]);
-        return "I did it!";
+    public void print(){
+        System.out.print(str + dex);
     }
 }
