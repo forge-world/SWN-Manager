@@ -10,18 +10,15 @@ public class Save_Load{
             FileWriter writer = new FileWriter(path);
             writer.write(json);
             writer.close();
-
         }catch (IOException e){
             System.out.println("Sonofa Beach");
         }
     }
     public static void load(String path){
         try{
-            String target = path;
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(target));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
             Gson decoder = new Gson();
             Character A = decoder.fromJson(bufferedReader, Character.class);
-            System.out.println(A);
         }catch(IOException z){
             System.out.println("Load Failure");
         }
