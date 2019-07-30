@@ -1,26 +1,29 @@
 import com.google.gson.Gson;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.FileReader;
 
-public class Save_Load {
+import java.io.*;
+
+public class Save_Load{
     public static void save(Character A, String path) {
+        Gson gson = new Gson();
+        String json = gson.toJson(A);
         try {
             FileWriter writer = new FileWriter(path);
-            Gson serializer = new Gson();
-            serializer.toJson(A, new FileWriter(path));
-            writer.flush();
+            writer.write(json);
             writer.close();
+
         }catch (IOException e){
             System.out.println("Sonofa Beach");
         }
     }
     public static void load(String path){
-        Gson decoder = new Gson();
         try{
-            Character B = decoder.fromJson(new FileReader (path), Character.class);
+            String target = path;
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(target));
+            Gson decoder = new Gson();
+            Character A = decoder.fromJson(bufferedReader, Character.class);
+            System.out.println(A);
         }catch(IOException z){
             System.out.println("Load Failure");
         }
-        }
+    }
 }
