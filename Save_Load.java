@@ -2,7 +2,8 @@ import com.google.gson.Gson;
 
 import java.io.*;
 
-public class Save_Load{
+public abstract class Save_Load{
+
     public static void save(Character A, String path) {
         Gson gson = new Gson();
         String json = gson.toJson(A);
@@ -14,13 +15,19 @@ public class Save_Load{
             System.out.println("Sonofa Beach");
         }
     }
-    public static void load(String path){
+    public static Character load(String path){
+        Character loader = new Character();
         try{
             BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
-            Gson decoder = new Gson();
-            Character A = decoder.fromJson(bufferedReader, Character.class);
+            Gson gson = new Gson();
+            loader = gson.fromJson( bufferedReader,Character.class);
+            System.out.println(loader.getDex());
+            System.out.println(loader);
         }catch(IOException z){
             System.out.println("Load Failure");
         }
+        return loader;
     }
+
+
 }
